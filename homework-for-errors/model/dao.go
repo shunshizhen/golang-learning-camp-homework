@@ -15,7 +15,7 @@ func Query(field string) error {
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return fmt.Errorf("%d, not found", config.NotFound)
-		}
+        }
 		return fmt.Errorf("%d, not found", config.SystemErr)
 	}
 	return nil
@@ -26,6 +26,6 @@ func IsNoRow(err error) bool {
 	return strings.HasPrefix(err.Error(), fmt.Sprintf("%d", config.NotFound))
 }
 
-func mockErr(data string)error{
+func mockErr(data string) error {
 	return errors.New("sql")
 }
