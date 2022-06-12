@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"log"
+	"runtime"
 )
 
 type Con struct {
@@ -27,4 +28,5 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Println(ver)
+	runtime.NumGoroutine()
 }
